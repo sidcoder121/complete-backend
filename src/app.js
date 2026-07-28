@@ -8,7 +8,10 @@ const notes = []
 
 //create API 
 app.post('/notes',(req,res)=>{
-    console.log(req.body)
+    notes.push(req.body)
+    res.status(201).json({
+        message:"note created succesfully"
+    })
 })
 
 module.exports = app
